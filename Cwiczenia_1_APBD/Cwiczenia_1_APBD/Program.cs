@@ -93,8 +93,9 @@ public class Program
         Console.WriteLine(kontener.loadMass);
         kontener.loadIn(1);
         Console.WriteLine(kontener.loadMass);
+        Console.WriteLine(kontener.loadMass);
         
-        kontener.loadIn(1000);
+        //kontener.loadIn(1000);
         Console.WriteLine(kontener.loadMass);
         
         
