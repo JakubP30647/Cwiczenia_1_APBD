@@ -13,6 +13,11 @@ public class ContainerLiquid : Container, IHazardNotifier
         this.isDanger = isDanger;
     }
 
+    public override string ToString()
+    {
+        return $"{base.ToString()}, {nameof(isDanger)}: {isDanger}";
+    }
+
     public void warningMassage(String massage)
     {
         Console.WriteLine(massage + " involved container serial number " + this.serialNumber);

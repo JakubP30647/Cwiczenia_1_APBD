@@ -16,13 +16,16 @@ public class ContainerGas : Container, IHazardNotifier
         
     }
 
+    public override string ToString()
+    {
+        return $"{base.ToString()}, {nameof(pressure)}: {pressure}";
+    }
+
 
     public override void loadOut()
     {
         
-        
         this.loadMass = this.loadMass * 0.05;
-        
         
     }
 

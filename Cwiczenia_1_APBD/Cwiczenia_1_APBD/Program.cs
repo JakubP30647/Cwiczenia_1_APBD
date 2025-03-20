@@ -36,6 +36,30 @@ public class Program
         containerGas.loadOut();
         Console.WriteLine(containerGas.loadMass);
 
+
+        ContainerFreezer containerFreezer1 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas);
+        ContainerFreezer containerFreezer2 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas);
+        
+        Console.WriteLine(containerFreezer1.serialNumber);
+        Console.WriteLine(containerFreezer2.products);
+        
+        List<Container> containers = new List<Container>();
+        containers.Add(containerLiquidDANGER);
+        containers.Add(containerLiquidNOTDANGER);
+        containers.Add(containerFreezer1);
+        containers.Add(containerFreezer2);
+
+        Ship ship = new Ship(6, 10, 10);
+        
+        
+        Console.WriteLine(containerFreezer1);
+        
+        ship.loadContainer(containers);
+        Console.WriteLine(containers[1]);
+        Console.WriteLine(ship.hold[1]);
+        
+        
+        
     }
     
 }

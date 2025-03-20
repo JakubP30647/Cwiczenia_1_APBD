@@ -1,3 +1,5 @@
+using Cwiczenia_1_APBD;
+
 public class Container
 {
     public double loadMass;
@@ -16,6 +18,12 @@ public class Container
         this.selfMass = selfMass;
         this.deep = deep;
         this.serialNumber = "lol";
+    }
+
+    public override string ToString()
+    {
+        return
+            $"{nameof(loadMass)}: {loadMass}, {nameof(loadMaxMass)}: {loadMaxMass}, {nameof(hight)}: {hight}, {nameof(selfMass)}: {selfMass}, {nameof(deep)}: {deep}, {nameof(serialNumber)}: {serialNumber}";
     }
 
     public virtual void loadOut()
@@ -37,6 +45,7 @@ public class Container
         }
 
     }
+    
 
 
 }
