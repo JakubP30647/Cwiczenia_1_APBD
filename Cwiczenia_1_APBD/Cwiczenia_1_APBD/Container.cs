@@ -33,11 +33,11 @@ public class Container
 
     public virtual void LoadIn(int mass)
     {
-        if (mass <= this.LoadMaxMass)
+        if (mass + this.LoadMass <= this.LoadMaxMass)
         {
-            this.LoadMass = mass;
+            this.LoadMass += mass;
         }
-        else if (mass > this.LoadMaxMass)
+        else if (mass + this.LoadMass > this.LoadMaxMass)
         {
             throw new OverfillException("Container IS TOO SMALL");
         }
