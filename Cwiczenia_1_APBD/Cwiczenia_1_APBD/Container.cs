@@ -2,50 +2,44 @@ using Cwiczenia_1_APBD;
 
 public class Container
 {
-    public double loadMass;
-    public double loadMaxMass;
-    public double hight;
-    public double selfMass;
-    public double deep;
-    public String serialNumber;
+    public double LoadMass;
+    public double LoadMaxMass;
+    public double Hight;
+    public double SelfMass;
+    public double Deep;
+    public String SerialNumber;
 
 
     public Container(double loadMaxMass, double hight, double selfMass, double deep)
     {
-        this.loadMass = 0;
-        this.loadMaxMass = loadMaxMass;
-        this.hight = hight;
-        this.selfMass = selfMass;
-        this.deep = deep;
-        this.serialNumber = "lol";
+        this.LoadMass = 0;
+        this.LoadMaxMass = loadMaxMass;
+        this.Hight = hight;
+        this.SelfMass = selfMass;
+        this.Deep = deep;
+        this.SerialNumber = "lol";
     }
 
     public override string ToString()
     {
         return
-            $"{nameof(loadMass)}: {loadMass}, {nameof(loadMaxMass)}: {loadMaxMass}, {nameof(hight)}: {hight}, {nameof(selfMass)}: {selfMass}, {nameof(deep)}: {deep}, {nameof(serialNumber)}: {serialNumber}";
+            $"{nameof(LoadMass)}: {LoadMass}, {nameof(LoadMaxMass)}: {LoadMaxMass}, {nameof(Hight)}: {Hight}, {nameof(SelfMass)}: {SelfMass}, {nameof(Deep)}: {Deep}, {nameof(SerialNumber)}: {SerialNumber}";
     }
 
-    public virtual void loadOut()
+    public virtual void LoadOut()
     {
-        this.loadMass = 0;
+        this.LoadMass = 0;
     }
 
-    public virtual void loadIn(int mass)
+    public virtual void LoadIn(int mass)
     {
-
-        if (mass <= this.loadMaxMass)
+        if (mass <= this.LoadMaxMass)
         {
-            this.loadMass = mass;
+            this.LoadMass = mass;
         }
-        else if (mass > this.loadMaxMass)
+        else if (mass > this.LoadMaxMass)
         {
             throw new OverfillException("Container IS TOO SMALL");
-            
         }
-
     }
-    
-
-
 }

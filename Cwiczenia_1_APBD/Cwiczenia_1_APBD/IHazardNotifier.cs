@@ -1,5 +1,4 @@
 public interface IHazardNotifier
 {
-    public void warningMassage(String massage);
-    
+    public void WarningMassage(String massage);
 }

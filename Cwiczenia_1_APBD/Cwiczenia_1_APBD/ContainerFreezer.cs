@@ -4,11 +4,11 @@ using static Cwiczenia_1_APBD.Products;
 
 public class ContainerFreezer : Container, IHazardNotifier
 {
-    private static int selfNumber = 0;
-    public Products products;
-    public double temperature;
+    private static int _selfNumber = 0;
+    public Products Products;
+    public double Temperature;
 
-    public Dictionary<Products, double> temperatureMap = new Dictionary<Products, double>
+    public Dictionary<Products, double> TemperatureMap = new Dictionary<Products, double>
     {
         { Bananas, 13.3 },
         { Chocolate, 18 },
@@ -22,15 +22,22 @@ public class ContainerFreezer : Container, IHazardNotifier
         { Eggs, 19 }
     };
 
-    
+
     public ContainerFreezer(double loadMaxMass, double hight, double selfMass, double deep,
-        Products products) : base(loadMaxMass, hight, selfMass, deep)
+        Products products, double temperature) : base(loadMaxMass, hight, selfMass, deep)
     {
-        this.products = products;
-        selfNumber = selfNumber + 1;
-        this.serialNumber = "KON-C-" + selfNumber;
-        this.products = products;
-        this.temperature = temperatureMap[products];
+        if (temperature > TemperatureMap[products])
+        {
+            Console.WriteLine("temperature is to high, container will not be created");
+            return;
+        }
+
+
+        this.Products = products;
+        _selfNumber = _selfNumber + 1;
+        this.SerialNumber = "KON-C-" + _selfNumber;
+        this.Products = products;
+        this.Temperature = temperature;
     }
 
 
@@ -62,7 +69,7 @@ public class ContainerFreezer : Container, IHazardNotifier
     // }
 
 
-    public void warningMassage(string massage)
+    public void WarningMassage(string massage)
     {
         Console.WriteLine(massage);
     }
@@ -70,6 +77,6 @@ public class ContainerFreezer : Container, IHazardNotifier
     public override string ToString()
     {
         return
-            $"{base.ToString()}, {nameof(products)}: {products}, {nameof(temperature)}: {temperature}, {nameof(temperatureMap)}: {temperatureMap}";
+            $"{base.ToString()}, {nameof(Products)}: {Products}, {nameof(Temperature)}: {Temperature}, {nameof(TemperatureMap)}: {TemperatureMap}";
     }
 }

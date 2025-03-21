@@ -2,7 +2,6 @@ namespace Cwiczenia_1_APBD;
 
 public enum Products
 {
-    
     Bananas,
     Chocolate,
     Fish,
@@ -13,6 +12,4 @@ public enum Products
     Sausage,
     Butter,
     Eggs,
-    
-    
 }

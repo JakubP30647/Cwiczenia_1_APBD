@@ -6,62 +6,59 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        
-        Container container = new Container(100, 5, 10, 10);
-        ContainerLiquid containerLiquidDANGER = new ContainerLiquid(100, 5, 10, 10, true);
-        ContainerLiquid containerLiquidNOTDANGER = new ContainerLiquid(100, 5, 10, 10, false);
-        
-        Console.WriteLine(container.serialNumber);
-        
-        
-        containerLiquidDANGER.loadIn(1000);
-        containerLiquidNOTDANGER.loadIn(1000);
-        
-        
-        containerLiquidDANGER.loadIn(49);
-        containerLiquidNOTDANGER.loadIn(89);
-        
-        Console.WriteLine(containerLiquidDANGER.loadMass);
-        Console.WriteLine(containerLiquidNOTDANGER.loadMass);
-        
-        
-        ContainerGas containerGas = new ContainerGas(100, 5, 10, 10,1);
+        // Container container = new Container(100, 5, 10, 10);
+        // ContainerLiquid containerLiquidDANGER = new ContainerLiquid(100, 5, 10, 10, true);
+        // ContainerLiquid containerLiquidNOTDANGER = new ContainerLiquid(100, 5, 10, 10, false);
+        //
+        // Console.WriteLine(container.SerialNumber);
+        //
+        //
+        // containerLiquidDANGER.LoadIn(1000);
+        // containerLiquidNOTDANGER.LoadIn(1000);
+        //
+        //
+        // containerLiquidDANGER.LoadIn(490);
+        // containerLiquidNOTDANGER.LoadIn(89);
+        //
+        // Console.WriteLine(containerLiquidDANGER.LoadMass);
+        // Console.WriteLine(containerLiquidNOTDANGER.LoadMass);
+        //
+        //
+        // ContainerGas containerGas = new ContainerGas(100, 5, 10, 10,1);
+        //
+        //
+        // Console.WriteLine(containerGas.SerialNumber);
+        //
+        // containerGas.LoadIn(100);
+        // Console.WriteLine("[PRZED]  "+containerGas.LoadMass);
+        //
+        // containerGas.LoadOut();
+        // Console.WriteLine(containerGas.LoadMass);
 
-        
-        Console.WriteLine(containerGas.serialNumber);
-        
-        containerGas.loadIn(100);
-        Console.WriteLine("[PRZED]  "+containerGas.loadMass);
-        
-        containerGas.loadOut();
-        Console.WriteLine(containerGas.loadMass);
+
+        ContainerFreezer containerFreezer1 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas, 15);
+        ContainerFreezer containerFreezer2 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas, 10);
 
 
-        ContainerFreezer containerFreezer1 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas);
-        ContainerFreezer containerFreezer2 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas);
-        
-        Console.WriteLine(containerFreezer1.serialNumber);
-        Console.WriteLine(containerFreezer2.products);
-        
-        List<Container> containers = new List<Container>();
-        containers.Add(containerLiquidDANGER);
-        containers.Add(containerLiquidNOTDANGER);
-        containers.Add(containerFreezer1);
-        containers.Add(containerFreezer2);
-
-        Ship ship = new Ship(6, 10, 10);
-        
-        
-        Console.WriteLine(containerFreezer1);
-        
-        ship.loadContainer(containers);
-        Console.WriteLine(containers[1]);
-        Console.WriteLine(ship.hold[1]);
-        
-        ship.loadContainer(containers);
-        
-        
-        
+        //
+        // Console.WriteLine(containerFreezer1.SerialNumber);
+        // Console.WriteLine(containerFreezer2.Products);
+        //
+        // List<Container> containers = new List<Container>();
+        // containers.Add(containerLiquidDANGER);
+        // containers.Add(containerLiquidNOTDANGER);
+        // containers.Add(containerFreezer1);
+        // containers.Add(containerFreezer2);
+        //
+        // Ship ship = new Ship(6, 10, 10);
+        //
+        //
+        // Console.WriteLine(containerFreezer1);
+        //
+        // ship.LoadContainer(containers);
+        // Console.WriteLine(containers[1]);
+        // Console.WriteLine(ship.hold[1]);
+        //
+        // ship.LoadContainer(containers);
     }
-    
 }
