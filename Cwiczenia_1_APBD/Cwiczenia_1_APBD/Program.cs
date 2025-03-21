@@ -36,9 +36,13 @@ public class Program
         // Console.WriteLine(containerGas.LoadMass);
 
 
-        ContainerFreezer containerFreezer1 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas, 15);
-        ContainerFreezer containerFreezer2 = new ContainerFreezer(100, 5, 10, 10, Products.Bananas, 10);
-
+        ContainerFreezer containerFreezer1 = new ContainerFreezer(1000, 5, 10, 10, Products.Bananas, 1);
+        ContainerFreezer containerFreezer2 = new ContainerFreezer(1000, 5, 10, 10, Products.Bananas, 1);
+        Ship ship = new Ship(2, 2, 3);
+        
+        ship.LoadContainer(containerFreezer1);
+        ship.LoadContainer(containerFreezer2);
+        Console.WriteLine(ship.hold);
 
         //
         // Console.WriteLine(containerFreezer1.SerialNumber);
