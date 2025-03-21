@@ -19,26 +19,51 @@ public class Ship
 
     public void loadContainer(Container container)
     {
-        if (this.hold.Count + 1 < this.capacity)
+
+        double weightSum = 0;
+        
+        foreach (var con in this.hold)
+        {
+            weightSum += con.loadMass + con.selfMass;
+        }
+        
+        weightSum += container.loadMass + container.selfMass;
+        
+        if (this.hold.Count + 1 < this.capacity && weightSum < this.maxWeight * 1000)
         {
             hold.Add(container);
         }
         else
         {
-            Console.WriteLine("Failed to load container, hold is full");
+            Console.WriteLine("Failed to load container, hold is full or max weight of load in ship is too small");
         }
         
     }
     
     public void loadContainer(List<Container> containers)
     {
-        if (this.hold.Count + containers.Count < this.capacity)
+        double weightSum = 0;
+        
+        foreach (var con in this.hold)
+        {
+            weightSum += con.loadMass + con.selfMass;
+        }
+
+        foreach (var con in containers)
+        {
+            weightSum += con.loadMass + con.selfMass;
+        }
+
+
+
+
+        if (this.hold.Count + containers.Count < this.capacity && weightSum < this.maxWeight * 1000)
         {
             hold.AddRange(containers);
         }
         else
         {
-            Console.WriteLine("Failed to add containers, hold is too small");
+            Console.WriteLine("Failed to add containers, hold is too small or max weight of load in ship is too small");
         }
         
     }

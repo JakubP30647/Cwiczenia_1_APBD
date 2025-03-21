@@ -58,6 +58,8 @@ public class Program
         Console.WriteLine(containers[1]);
         Console.WriteLine(ship.hold[1]);
         
+        ship.loadContainer(containers);
+        
         
         
     }
