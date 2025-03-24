@@ -8,7 +8,7 @@ namespace Cwiczenia_1_APBD
         static List<Ship> ships = new List<Ship>();
         static List<Container> containers = new List<Container>();
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             while (true)
             {
