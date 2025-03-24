@@ -24,7 +24,7 @@ public class ContainerLiquid : Container, IHazardNotifier
         Console.WriteLine(massage + " involved container serial number " + this.SerialNumber);
     }
 
-    public override void LoadIn(int mass)
+    public override void LoadIn(double mass)
     {
         switch (this.IsDangerous)
         {

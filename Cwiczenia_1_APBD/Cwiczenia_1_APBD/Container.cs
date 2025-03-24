@@ -31,7 +31,7 @@ public class Container
         this.LoadMass = 0;
     }
 
-    public virtual void LoadIn(int mass)
+    public virtual void LoadIn(double mass)
     {
         if (mass + this.LoadMass <= this.LoadMaxMass)
         {
