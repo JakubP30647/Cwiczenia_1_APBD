@@ -29,7 +29,7 @@ public class ContainerLiquid : Container, IHazardNotifier
         switch (this.IsDangerous)
         {
             case true:
-                if (mass <= this.LoadMaxMass * 0.5)
+                if (mass + this.LoadMass <= this.LoadMaxMass * 0.5)
                 {
                     this.LoadMass = mass;
                 }
@@ -45,7 +45,7 @@ public class ContainerLiquid : Container, IHazardNotifier
                 break;
 
             case false:
-                if (mass <= this.LoadMaxMass * 0.9)
+                if (mass + this.LoadMass <= this.LoadMaxMass * 0.9)
                 {
                     this.LoadMass = mass;
                 }

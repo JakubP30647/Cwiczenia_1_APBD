@@ -66,14 +66,14 @@ public class Ship
         }
     }
 
-    public void delContainer(String serialNumber)
+    public void DelContainer(String serialNumber)
     {
         foreach (var con in this.hold)
         {
             if (con.SerialNumber == serialNumber)
             {
-                Console.WriteLine("Container: " + serialNumber + " has been deleted");
                 hold.Remove(con);
+                Console.WriteLine("Container: " + serialNumber + " has been deleted");
                 return;
             }
         }
@@ -84,7 +84,7 @@ public class Ship
     public static void ContainersMove(Ship shipFrom, Ship shipTarget, String serialNumber)
     {
         Container exchanegC = null;
-        foreach (var con in shipFrom.hold)
+        foreach (var con in shipFrom.hold.ToList())
         {
             if (con.SerialNumber == serialNumber)
             {
