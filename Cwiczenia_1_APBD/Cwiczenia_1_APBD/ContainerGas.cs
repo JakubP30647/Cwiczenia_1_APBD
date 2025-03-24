@@ -2,21 +2,22 @@ namespace Cwiczenia_1_APBD;
 
 public class ContainerGas : Container, IHazardNotifier
 {
-    static int selfNumber = 0;
+    // static int selfNumber = 0;
     public double pressure; // w atmosferach
 
     public ContainerGas(double loadMaxMass, double hight, double selfMass, double deep, double pressure) : base(
         loadMaxMass, hight, selfMass, deep)
     {
-        selfNumber = selfNumber + 1;
-        this.SerialNumber = "KON-G-" + selfNumber;
+        _selfNumber = _selfNumber + 1;
+        this.SerialNumber = "KON-G-" + _selfNumber;
         this.pressure = pressure;
     }
 
     public override string ToString()
     {
-        return $"{base.ToString()}, {nameof(pressure)}: {pressure}";
+        return $"{base.ToString()}, pressure: {pressure}";
     }
+
 
 
     public override void LoadOut()

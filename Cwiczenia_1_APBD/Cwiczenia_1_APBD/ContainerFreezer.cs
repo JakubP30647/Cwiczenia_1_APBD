@@ -4,7 +4,6 @@ using static Cwiczenia_1_APBD.Products;
 
 public class ContainerFreezer : Container, IHazardNotifier
 {
-    private static int _selfNumber = 0;
     public Products Products;
     public double Temperature;
 
@@ -40,33 +39,11 @@ public class ContainerFreezer : Container, IHazardNotifier
         this.Temperature = temperature;
     }
 
-
-    // public void LoadInWithProduct(int mass, Products product)
-    // {
-    //     if (this.products != Empty && this.products != product)
-    //     {
-    //         throw new InvalidOperationException(
-    //             $"Kontener przechowuje już {this.products}. Nie można załadować innego produktu.");
-    //     }
-    //
-    //     if (!temperatureMap.ContainsKey(product))
-    //     {
-    //         throw new ArgumentException($"Nieznany produkt: {product}");
-    //     }
-    //
-    //     double requiredTemperature = temperatureMap[product];
-    //
-    //     if (this.temperature > requiredTemperature)
-    //     {
-    //         throw new InvalidOperationException(
-    //             $"Temperatura w kontenerze ({this.temperature} stopni) jest za wysoka dla {product} (wymagana: {requiredTemperature}°C).");
-    //     }
-    //
-    //     
-    //     this.products = product;
-    //     this.loadMass = mass;
-    //     Console.WriteLine($"Załadowano {mass} kg {product} do kontenera {this.serialNumber}.");
-    // }
+    ~ContainerFreezer()
+    {
+        Console.WriteLine($"Destructor called for ContainerFreezer with SerialNumber: {this.SerialNumber}");
+        // Perform any additional cleanup if necessary
+    }
 
 
     public void WarningMassage(string massage)
@@ -77,6 +54,6 @@ public class ContainerFreezer : Container, IHazardNotifier
     public override string ToString()
     {
         return
-            $"{base.ToString()}, {nameof(Products)}: {Products}, {nameof(Temperature)}: {Temperature}, {nameof(TemperatureMap)}: {TemperatureMap}";
+            $"{base.ToString()}, Products: {Products}, Temperature: {Temperature}°C, TemperatureMap: {TemperatureMap}";
     }
 }

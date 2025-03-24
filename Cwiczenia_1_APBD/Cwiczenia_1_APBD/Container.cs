@@ -8,6 +8,7 @@ public class Container
     public double SelfMass;
     public double Deep;
     public String SerialNumber;
+    public static int _selfNumber = 0;
 
 
     public Container(double loadMaxMass, double hight, double selfMass, double deep)
@@ -22,8 +23,7 @@ public class Container
 
     public override string ToString()
     {
-        return
-            $"{nameof(LoadMass)}: {LoadMass}, {nameof(LoadMaxMass)}: {LoadMaxMass}, {nameof(Hight)}: {Hight}, {nameof(SelfMass)}: {SelfMass}, {nameof(Deep)}: {Deep}, {nameof(SerialNumber)}: {SerialNumber}";
+        return $"LoadMass: {LoadMass} kg, LoadMaxMass: {LoadMaxMass} kg, Height: {Hight} m, SelfMass: {SelfMass} kg, Depth: {Deep} m, SerialNumber: {SerialNumber}";
     }
 
     public virtual void LoadOut()

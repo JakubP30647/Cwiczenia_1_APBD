@@ -2,7 +2,7 @@ using System.Data.SqlTypes;
 
 public class ContainerLiquid : Container, IHazardNotifier
 {
-    private static int _selfNumber = 0;
+    // private static int _selfNumber = 0;
     public bool IsDangerous;
 
     public ContainerLiquid(double loadMaxMass, double hight, double selfMass, double deep, bool isDangerous) : base(
@@ -15,8 +15,9 @@ public class ContainerLiquid : Container, IHazardNotifier
 
     public override string ToString()
     {
-        return $"{base.ToString()}, {nameof(IsDangerous)}: {IsDangerous}";
+        return $"{base.ToString()}, IsDangerous: {IsDangerous}";
     }
+
 
     public void WarningMassage(String massage)
     {

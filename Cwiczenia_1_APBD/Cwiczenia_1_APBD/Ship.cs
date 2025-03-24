@@ -139,7 +139,7 @@ public class Ship
 
     public override string ToString()
     {
-        return
-            $"{nameof(hold)}: {hold}, {nameof(capacity)}: {capacity}, {nameof(maxSpeed)}: {maxSpeed}, {nameof(maxWeight)}: {maxWeight}";
+        return $"Ship: capacity: {capacity}, maxSpeed: {maxSpeed} mil, maxWeight: {maxWeight} kg, hold: {string.Join(",", hold)}";
     }
+
 }
