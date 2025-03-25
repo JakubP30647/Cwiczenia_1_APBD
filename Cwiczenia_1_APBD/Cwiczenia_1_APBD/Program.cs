@@ -16,6 +16,10 @@ namespace Cwiczenia_1_APBD
                 string choice = Console.ReadLine();
                 switch (choice)
                 {
+                    case "0":
+                        AddShip();
+                        break;
+                    
                     case "1":
                         AddContainer();
                         break;
@@ -61,7 +65,7 @@ namespace Cwiczenia_1_APBD
             Console.Clear();
             Console.WriteLine("Możliwe akcje:");
 
-            
+            Console.WriteLine("0. Stwórz statek");
             Console.WriteLine("1. Stwórz kontener");
 
             // Opcje dotyczące kontenerów wyświetlane tylko, jeśli są kontenery
@@ -77,18 +81,18 @@ namespace Cwiczenia_1_APBD
                 Console.WriteLine("9. Wypisz informacje o kontenerze");
             }
 
-            // Opcje dotyczące statków wyświetlane tylko, jeśli są statki
+           
             if (ships.Count > 0)
             {
                 Console.WriteLine("10. Wypisz informacje o statku");
             }
 
-            // Opcja zakończenia programu
+           
             Console.WriteLine("11. Wyjście");
             Console.Write("Wybór: ");
         }
 
-        // 1. Stworzenie kontenera
+    
         static void AddContainer()
         {
             Console.WriteLine("Wybierz typ kontenera:");
@@ -120,6 +124,32 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
+        
+        
+        
+        
+        static void AddShip()
+        {
+            Console.WriteLine("Podaj maksymalną liczbę kontenerów (capacity):");
+            int capacity = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Podaj maksymalną prędkość statku (maxSpeed w milach):");
+            double maxSpeed = double.Parse(Console.ReadLine());
+
+            Console.WriteLine("Podaj maksymalną wagę ładunku (maxWeight w tonach):");
+            double maxWeight = double.Parse(Console.ReadLine());
+
+          
+            Ship ship = new Ship(capacity, maxSpeed, maxWeight);
+
+            ships.Add(ship);
+
+            Console.WriteLine("Statek został dodany!");
+            Console.ReadLine(); 
+        }
+
+        
+        
         static Container CreateGasContainer()
         {
             Console.WriteLine("Podaj maksymalną wagę ładunku (kg):");
@@ -192,7 +222,6 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
-        // 3. Załadowanie kontenera na statek
         static void AddContainerToShip()
         {
             Console.WriteLine("Wybierz statek:");
@@ -221,7 +250,7 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
-        // 4. Załadowanie wszystkich kontenerów na statek
+      
         static void AddAllContainersToShip()
         {
             Console.WriteLine("Wybierz statek:");
@@ -274,8 +303,7 @@ namespace Cwiczenia_1_APBD
             }
             Console.ReadLine();
         }
-
-        // 6. Rozładunek kontenera
+        
         static void UnloadContainer()
         {
             Console.WriteLine("Wybierz statek, z którego chcesz rozładować kontener:");
@@ -304,7 +332,7 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
-        // 7. Zastąpienie kontenera na statku
+       
         static void ReplaceContainerOnShip()
         {
             Console.WriteLine("Wybierz statek, na którym chcesz zastąpić kontener:");
@@ -339,8 +367,8 @@ namespace Cwiczenia_1_APBD
             }
             Console.ReadLine();
         }
-
-        // 8. Przeniesienie kontenera między statkami
+        
+        
         static void TransferContainerBetweenShips()
         {
             Console.WriteLine("Wybierz kontener do przeniesienia:");
@@ -388,7 +416,7 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
-        // 9. Wypisanie informacji o kontenerze
+     
         static void ShowContainerInfo()
         {
             Console.WriteLine("Wybierz kontener do wyświetlenia informacji:");
@@ -409,7 +437,6 @@ namespace Cwiczenia_1_APBD
             Console.ReadLine();
         }
 
-        // 10. Wypisanie informacji o statku
         static void ShowShipInfo()
         {
             Console.WriteLine("Wybierz statek do wyświetlenia informacji:");
